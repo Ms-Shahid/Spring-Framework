@@ -26,3 +26,24 @@ POJO(Bean) + Configurations => Spring Container - ready container (ready to use 
 - Any Java Object that is managed by Spring
 - Spring uses IOC container ( Bean Factory or Application Context) to manage these objects
 
+Annotations
+-----------
+@Bean -> defines the bean at method level
+@Component -> spring autowires the class instance to directly use
+@ComponentScan -> Spring uses these as qualifying package to autowires the class object
+@Configuration -> Spring configues all the POJO based things to use.
+@Primary -> if there are multiple instances & bean then by adding @Primary tells spring to choose this as primary bean
+@Qualifier("name") -> describes the qualifier name, if there are multiple instance of bean you have tell spring to use
+this as injection using constructor injection
+@Autowired -> Just wire up the class instance in a preferred one !. @Primary one
+
+
+
+@Primary Vs @Qualifier
+---------------------
+Always think from perspective of class to which one is at high priority to use
+
+@Autowired + @Qualifier : Inject/Autowire only the specific classes defined with @Qualifier
+
+@Qualifier > @Primary
+
