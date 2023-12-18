@@ -1,5 +1,8 @@
 package in.backend.app.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PacMan implements GamingConsole{
 
 
