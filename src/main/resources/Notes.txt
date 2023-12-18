@@ -1,0 +1,28 @@
+
+Spring bean -> Is a POJO based object in spring terms
+Spring Container(IOC Container/ Spring Context) -> Manages Spring beans & their lifecycle,
+POJO(Bean) + Configurations => Spring Container - ready container (ready to use beans at runtime)
+
+
+ 2 types of Spring Containers
+ 1) Bean Factory : Basic Spring container
+ 2) Application Context : Advance Spring container with enterprise-specific features
+
+
+ JAVA Bean Vs POJO vs Spring bean
+
+ JAVA Bean
+ -----------
+ - Java Bean implements Serializable interface
+ - Requires no-args constructor
+ - Allow access to their properties using getters & setters
+ - Similar to POJO based
+
+ POJO : Plain Old Java Object
+ - Any Java Object is a POJO
+
+ Spring Bean
+-----------
+- Any Java Object that is managed by Spring
+- Spring uses IOC container ( Bean Factory or Application Context) to manage these objects
+
