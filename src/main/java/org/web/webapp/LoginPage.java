@@ -1,5 +1,7 @@
 package org.web.webapp;
 
+import org.web.webapp.validations.UserValidationService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

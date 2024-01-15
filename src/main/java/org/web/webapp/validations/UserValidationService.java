@@ -1,4 +1,4 @@
-package org.web.webapp;
+package org.web.webapp.validations;
 
 public class UserValidationService {
 
