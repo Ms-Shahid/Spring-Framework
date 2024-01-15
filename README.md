@@ -12,3 +12,36 @@
 - The web app consists of JSP pages along with Servlet business logics to handle the requests
 - App consists of various endpoints such as `/login`, `/welcome`, `/resource` etc..
 - The application is currently WIP
+
+### Refactor quick app to use Spring-MVC
+
+- Added a spring-mvc dependency 
+- ```
+  <dependency>
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-webmvc</artifactId>
+  <version>4.2.2.RELEASE</version>
+  </dependency>
+  ```
+- Add the servlet in `web.xml`
+
+
+### Spring Application flow
+
+- Request comes to Dispatcher -> controller/JSP/Servlet : this pattern is called _front controller pattern_
+- The Dispatcher servlet is defined in `web.xml`
+- Dispatcher servlet based on url in controller, trigger the request at specified endpoint ex : `/login`
+- Typically we show the info as JSP page in web browser, therefore, the response of controller is a view
+- We have to tell dispatcher that these views are present with `prefix(filename) + suffix(.jsp)`
+- To handle this, we have a bean called `viewResolver`, present in class `class="org.springframework.web.servlet.view.InternalResourceViewResolver"`
+- 
+
+
+### Annotations
+ Spring supports various annotations, lets understand them 
+
+| Annotations     | Defined Level | Description                                                                                             |
+|-----------------|---------------|---------------------------------------------------------------------------------------------------------|
+| @Controller     | Class         | informs the dispatcher servelet that this controller handles the incoming request at specified endpoint |
+| @RequestMapping | method        | helps in declaring the custom endpoint                                                                  |
+| @ResponseBody   | method        | Informs dispatcher to return a method response as http response in web page                             |

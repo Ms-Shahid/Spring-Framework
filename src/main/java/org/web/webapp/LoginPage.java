@@ -18,7 +18,7 @@ public class LoginPage extends HttpServlet {
 
 //        request.setAttribute("name", request.getParameter("name"));
 //        request.setAttribute("password", request.getParameter("password"));
-        request.getRequestDispatcher("/WEB-INF/views/Login.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class LoginPage extends HttpServlet {
         }
         else{
             request.setAttribute("errorMessage", "Oops! Username or Password is invalid");
-            request.getRequestDispatcher("/WEB-INF/views/Login.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
         }
     }
 
