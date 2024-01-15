@@ -34,7 +34,15 @@
 - Typically we show the info as JSP page in web browser, therefore, the response of controller is a view
 - We have to tell dispatcher that these views are present with `prefix(filename) + suffix(.jsp)`
 - To handle this, we have a bean called `viewResolver`, present in class `class="org.springframework.web.servlet.view.InternalResourceViewResolver"`
-- 
+
+### Architecture of Spring mvc
+
+- The incoming request comes to dispatcher(front controller)
+- The dispatcher searches for the right `endpoint` to `route` the request
+- Once the dispatcher finds the right route, the request goes to the controller to handle the request endpoint
+- Controller performs some operations such as return a `web page`, the controller tells the dispatcher which view to be rendered
+- Then the dispatcher talks to viewResolver to get the display view
+- Finally, the dispatcher then renders the request, executes the request & sends the response back
 
 
 ### Annotations
