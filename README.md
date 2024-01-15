@@ -37,6 +37,7 @@
 
 ### Architecture of Spring mvc
 
+![Architecture](https://media.geeksforgeeks.org/wp-content/uploads/20231106150237/Spring-MVC-Framework-Control-flow-Diagram.png)
 - The incoming request comes to dispatcher(front controller)
 - The dispatcher searches for the right `endpoint` to `route` the request
 - Once the dispatcher finds the right route, the request goes to the controller to handle the request endpoint
