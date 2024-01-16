@@ -64,9 +64,11 @@ input {
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
 #error{
-color:red;
-font-size: 13px;
-font-family: 'Open Sans', sans-serif;
+    color:red;
+    font-size: 13px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 3px;
 }
 </style>
 
@@ -79,7 +81,7 @@ font-family: 'Open Sans', sans-serif;
     	<input type="text" name="username" placeholder="Username" required="required" />
         <input type="password" name="password" placeholder="Password" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Explore the Universe</button>
-        <h4 id = "error" >${not empty errorMessage ? errorMessage : ''}</h4>
+        <h4 id = "error" >${errorMessage}</h4>
     </form>
 
 </div>

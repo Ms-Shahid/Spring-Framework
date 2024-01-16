@@ -28,7 +28,7 @@
 
 ### Spring Application flow
 
-- Request comes to Dispatcher -> controller/JSP/Servlet : this pattern is called _front controller pattern_
+- Request comes to Dispatcher => controller/JSP/Servlet : this pattern is called _front controller pattern_
 - The Dispatcher servlet is defined in `web.xml`
 - Dispatcher servlet based on url in controller, trigger the request at specified endpoint ex : `/login`
 - Typically we show the info as JSP page in web browser, therefore, the response of controller is a view
@@ -49,8 +49,35 @@
 ### Annotations
  Spring supports various annotations, lets understand them 
 
-| Annotations     | Defined Level | Description                                                                                             |
-|-----------------|---------------|---------------------------------------------------------------------------------------------------------|
-| @Controller     | Class         | informs the dispatcher servelet that this controller handles the incoming request at specified endpoint |
-| @RequestMapping | method        | helps in declaring the custom endpoint                                                                  |
-| @ResponseBody   | method        | Informs dispatcher to return a method response as http response in web page                             |
+| Annotations     | Defined Level     | Description                                                                                             |
+|-----------------|-------------------|---------------------------------------------------------------------------------------------------------|
+| @Controller     | Class             | informs the dispatcher servelet that this controller handles the incoming request at specified endpoint |
+| @RequestMapping | method            | helps in declaring the custom endpoint                                                                  |
+| @ResponseBody   | method            | Informs dispatcher to return a method response as http response in web page                             |
+| @RequestMapping | method-parameter  | Handles to get the parameters from the view                                                             |
+| @Service        | Class             | Spring create a bean of @Service annotated class                                                        |
+| @Autowired      | variable | the created bean can we used without creating object of bean with Autowired                             |
+
+
+### How the view gets renders from different web pages
+
+- Similar to `req.setAttribute("name", name)` in case of `HttpServletRequest`
+- In Spring MVC, handles this req using `ModelMap` to render in view. Just make sure that same attribute-name is passed
+- `Model` presents this between the controller & view
+- This attribute from the view we can get using `@RequestMapping`
+
+### Changes done
+- deleted all the servlet classes
+- replaced with controller & service package 
+- The `/login` is handled in `controller` & validation is added in `service`
+
+## How Spring searchs/know which instance to create
+- Spring searches in the package defined in `xml` context `componentscan` bean
+- Annotations such as `@controller`, `@service` , `@Autowired` spring manages all & creates instances through scanning in bean context `component-scan`
+### Log 4J
+
+- TRACE - Prints complete error info
+- DEBUG - Prints good error info
+- INFO - prints useful info about error
+- WARN - prints warnings
+- ERROR - prints the error
