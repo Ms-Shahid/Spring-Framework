@@ -7,6 +7,9 @@
 - Then trigger the tomcat server using `mvn tomcat67:run`
 - Head to `port:8080/login`
 
+![img.png](img.png)
+![img_1.png](img_1.png)
+
 #### Details 
 
 - The web app consists of JSP pages along with Servlet business logics to handle the requests
