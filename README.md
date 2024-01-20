@@ -97,3 +97,16 @@
 - INFO - prints useful info about error
 - WARN - prints warnings
 - ERROR - prints the error
+
+
+### Context Dependecy Injection(CDI)
+- Similar to JPA( JAVA Persistance API) which is an API interface & Hibernate understands the JPA & provides the implementation of JPA
+- CDI is also an interface, defines how to do dependency injection. Such as `@Inject`, `@Named`, `@singleton`
+- Spring also supports this CDI which annotations similar to CDI, such as 
+| CDI Annotations     | Spring Annotations     |                                                                                             
+|-----------------|-------------------|
+| @Inject     | @Autowired             |
+| @Named     | @Component & @Qualifer             |
+| @Singelton     | @Singleton             |
+
+[CDI](https://dzone.com/refcardz/contexts-and-depencency)
