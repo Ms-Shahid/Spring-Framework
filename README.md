@@ -59,7 +59,20 @@
 | @ResponseBody   | method            | Informs dispatcher to return a method response as http response in web page                             |
 | @RequestMapping | method-parameter  | Handles to get the parameters from the view                                                             |
 | @Service        | Class             | Spring create a bean of @Service annotated class                                                        |
-| @Autowired      | variable | the created bean can we used without creating object of bean with Autowired                             |
+| @Autowired      | variable | the created bean can we used without creating object of bean with Autowired, we can also auto wire by name of variable                             |
+| @Primary      | method | Sets the high-priority bean to be created if there are multiple `@Component` beans tobe created                            |
+| @Qualifier      | variable & method | If multiple @Component bean is available using `@Qualifier("somename")` we can add at both @Component & in Autowire bean                             |
+| @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON) or   @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)    | method | scope of a bean during application context                            |
+| @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)    | method | whenever we want bean & any one its dependency is PROTOTYPE, then on the dependency we have to use proxy                            |
+| @PostConstruct    | method | PostConstruct loads up once as soon all the dependencies are lodded, before calling the acutal methods of class                           |
+| @PreDestory    | method | the PreDestroy annotation is used on a method as a callback notification to signal that the instance is in the process of being removed by the container.                           |
+
+
+### BEAN SCOPE
+- _Singleton_ : By default all beans in Spring are singleton, which mean that same object instance is reffered per spring context
+- _prototype_ : New bean is created whenever requested 
+- _request_ : one bean per HTTP request
+- _session_ : one bean per HTTP request
 
 
 ### How the view gets renders from different web pages
