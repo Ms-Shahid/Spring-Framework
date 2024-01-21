@@ -58,7 +58,9 @@
 | @RequestMapping | method            | helps in declaring the custom endpoint                                                                  |
 | @ResponseBody   | method            | Informs dispatcher to return a method response as http response in web page                             |
 | @RequestMapping | method-parameter  | Handles to get the parameters from the view                                                             |
-| @Service        | Class             | Spring create a bean of @Service annotated class                                                        |
+| @Service        | Class             | Business Service logic                                                  |
+| @Component        | Class             | Generic inorder to defined the bean to be created                                                        |
+| @Repository        | method             | The @Repository annotation in Spring Boot is a stereotype annotation that indicates that the annotated class is a repository. A repository is a class that provides the mechanism for storage, retrieval, update, delete and search operation on objects.|
 | @Autowired      | variable | the created bean can we used without creating object of bean with Autowired, we can also auto wire by name of variable                             |
 | @Primary      | method | Sets the high-priority bean to be created if there are multiple `@Component` beans tobe created                            |
 | @Qualifier      | variable & method | If multiple @Component bean is available using `@Qualifier("somename")` we can add at both @Component & in Autowire bean                             |
@@ -66,6 +68,7 @@
 | @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)    | method | whenever we want bean & any one its dependency is PROTOTYPE, then on the dependency we have to use proxy                            |
 | @PostConstruct    | method | PostConstruct loads up once as soon all the dependencies are lodded, before calling the acutal methods of class                           |
 | @PreDestory    | method | the PreDestroy annotation is used on a method as a callback notification to signal that the instance is in the process of being removed by the container.                           |
+| @Value("${properties-file-var}")        | Variable             | the @Value annotation is mostly used to get value for specific property keys from the properties file                                                       |
 
 
 ### BEAN SCOPE
@@ -110,4 +113,15 @@
 | @Named     | @Component & @Qualifer   |
 | @Singelton     | @Singleton             |
 
-- [CDI](https://dzone.com/refcardz/contexts-and-depencency)
+[CDI](https://dzone.com/refcardz/contexts-and-depencency)
+
+### ICO Container & Spring Application Context & Bean Factory
+- Inversion of Control Container
+    - A Concept that defines how the dependency of the beans are created with a loose coupling context
+    - The IOC will inject the dependency for the bean, with spring we are swifting the responsibility to create this beans.
+    - IOC is a generic concept its not framework specific
+    - In Spring there are 2 implementations of IOC container, Application Context & Bean Factory
+
+- Application Context & Bean Factory
+  - Application Context = Bean Factory + Additional Spring Features
+     
