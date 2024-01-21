@@ -113,7 +113,7 @@
 | @Named     | @Component & @Qualifer   |
 | @Singelton     | @Singleton             |
 
-[CDI](https://dzone.com/refcardz/contexts-and-depencency)
+
 
 ### ICO Container & Spring Application Context & Bean Factory
 - Inversion of Control Container
@@ -125,3 +125,7 @@
 - Application Context & Bean Factory
   - Application Context = Bean Factory + Additional Spring Features
      
+
+### References 
+- [Spring IOC](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/beans.html)
+- [CDI](https://dzone.com/refcardz/contexts-and-depencency)
