@@ -3,18 +3,19 @@ package org.spring.springstarter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spring.springstarter.scope.Person;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
-public class SpringScopeStarterApplication {
+@Configuration
+@ComponentScan()
+public class SpringJavaScopeStarterApplication {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(SpringScopeStarterApplication.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(SpringJavaScopeStarterApplication.class);
     public static void main(String[] args) {
 
-        ApplicationContext applicationContext = SpringApplication.run(SpringScopeStarterApplication.class, args);
-
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringJavaScopeStarterApplication.class);
         Person person1 = applicationContext.getBean(Person.class);
         Person person2 = applicationContext.getBean(Person.class);
 
