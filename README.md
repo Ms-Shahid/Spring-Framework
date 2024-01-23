@@ -63,6 +63,7 @@
 | Annotations     | Defined Level     | Description                                                                                             |
 |-----------------|-------------------|---------------------------------------------------------------------------------------------------------|
 | @Controller     | Class             | informs the dispatcher servelet that this controller handles the incoming request at specified endpoint |
+| @ModelAttribute     | method-parameter             | send or retrive data from controller onto an object |
 | @RequestMapping | method            | helps in declaring the custom endpoint                                                                  |
 | @ResponseBody   | method            | Informs dispatcher to return a method response as http response in web page                             |
 | @RequestMapping | method-parameter  | Handles to get the parameters from the view                                                             |
