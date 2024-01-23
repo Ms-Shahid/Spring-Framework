@@ -48,7 +48,15 @@
 - Then the dispatcher talks to viewResolver to get the display view
 - Finally, the dispatcher then renders the request, executes the request & sends the response back
 
+### Req/Res cycle
 
+![img_2.png](img_2.png)
+- Incoming request is first processed by front controller( dispatcher servlet)
+- The dispatcher routes the request to one of the controllers,
+- The controller delegates this req traffic to backend
+- backend could be web services, databases; it creates a model (kind of view to be rendered)
+- Now this rendering of model is separate from business logic, this model is passed to view template( view resolver) to render
+- req of view is returned to front controller & returned to browser.
 ### Annotations
  Spring supports various annotations, lets understand them 
 
@@ -62,7 +70,7 @@
 | @Autowired      | variable | the created bean can we used without creating object of bean with Autowired                             |
 
 
-### How the view gets renders from different web pages
+### How the view gets rendered from different web pages
 
 - Similar to `req.setAttribute("name", name)` in case of `HttpServletRequest`
 - In Spring MVC, handles this req using `ModelMap` to render in view. Just make sure that same attribute-name is passed
@@ -77,6 +85,7 @@
 ## How Spring searchs/know which instance to create
 - Spring searches in the package defined in `xml` context `componentscan` bean
 - Annotations such as `@controller`, `@service` , `@Autowired` spring manages all & creates instances through scanning in bean context `component-scan`
+
 ### Log 4J
 
 - TRACE - Prints complete error info
@@ -84,3 +93,5 @@
 - INFO - prints useful info about error
 - WARN - prints warnings
 - ERROR - prints the error
+
+
